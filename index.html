@@ -883,6 +883,21 @@
             border-color: var(--maroon-light);
         }
 
+        /* Visit Counter Badge */
+        .visit-counter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(229, 193, 88, 0.1);
+            border: 1px solid var(--border-gold);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: var(--gold-bright);
+            margin-top: 14px;
+        }
+
         /* Footer */
         .site-footer {
             background: #25090f;
@@ -1189,6 +1204,11 @@
         <footer class="site-footer">
             <div class="footer-quote">Two hearts, two families, one divine beginning.</div>
             <p>We eagerly look forward to welcoming you! 🙏</p>
+
+            <!-- Visit Counter Badge -->
+            <div class="visit-counter-badge" id="visitCounter">
+                <i class="fa-solid fa-eye"></i> <span id="visitCount">...</span> Guest Visits
+            </div>
         </footer>
 
     </div>
@@ -1355,6 +1375,31 @@
                 startAudio();
             }
         }
+
+        // Live Guest Visit Counter API
+        function trackVisits() {
+            const counterApiUrl = 'https://api.counterapi.dev/v1/pradeepgowriinvite/visits/up';
+            fetch(counterApiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.count) {
+                        document.getElementById('visitCount').innerText = data.count.toLocaleString();
+                    } else {
+                        throw new Error("Invalid counter response");
+                    }
+                })
+                .catch(err => {
+                    // Fallback to local storage tracking
+                    let count = parseInt(localStorage.getItem('pg_visit_count') || '12');
+                    if (!sessionStorage.getItem('pg_session_visited')) {
+                        count += 1;
+                        localStorage.setItem('pg_visit_count', count);
+                        sessionStorage.setItem('pg_session_visited', 'true');
+                    }
+                    document.getElementById('visitCount').innerText = count.toLocaleString();
+                });
+        }
+        trackVisits();
     </script>
 </body>
 

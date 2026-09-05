@@ -195,31 +195,60 @@
             padding-bottom: 80px;
         }
 
-        /* Music Toggle Floating Button */
-        .music-btn {
+        /* Music Toggle Floating Pill Widget */
+        .music-widget {
             position: fixed;
             top: 20px;
-            right: 20px;
+            right: 15px;
             z-index: 1000;
-            width: 44px;
-            height: 44px;
-            background: rgba(74, 14, 23, 0.85);
+            background: rgba(30, 9, 13, 0.9);
+            border: 1px solid var(--gold-bright);
+            border-radius: 25px;
+            padding: 6px 14px 6px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            color: var(--gold-bright);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .music-widget:hover {
+            transform: scale(1.04);
+            background: var(--maroon-deep);
+        }
+
+        .music-btn {
+            width: 32px;
+            height: 32px;
+            background: var(--maroon-deep);
             border: 1px solid var(--gold-bright);
             border-radius: 50%;
             color: var(--gold-bright);
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
+            font-size: 14px;
+            flex-shrink: 0;
         }
 
-        .music-btn.playing {
-            animation: spinMusic 8s linear infinite;
-            background: var(--maroon-deep);
+        .music-widget.playing .music-btn {
+            animation: spinMusic 6s linear infinite;
+            background: #6d1830;
             color: #ffffff;
+        }
+
+        .song-title-badge {
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #f7e6c4;
         }
 
         @keyframes spinMusic {
@@ -912,6 +941,9 @@
 
 <body>
 
+    <!-- HTML5 Audio element for Sakhi Mangalyam Song -->
+    <audio id="bgAudio" loop preload="auto" src="assets/audio/audio.mp3"></audio>
+
     <!-- Petals and Sparkles Overlay -->
     <div id="petal-container"></div>
 
@@ -925,17 +957,20 @@
             <div class="om-symbol">🕉</div>
             <div class="envelope-names">Gowri & Pradeep</div>
             <div class="envelope-subtext">You are cordially invited to celebrate our Wedding</div>
-            <div class="wax-seal-btn" onclick="openInvitation()" title="Tap to Open Invitation">
+            <div class="wax-seal-btn" onclick="openInvitation()" title="Tap to Open Invitation & Play Song">
                 <i class="fa-solid fa-envelope-open-text"></i>
             </div>
             <div class="seal-hint">Tap Wax Seal to Open</div>
         </div>
     </div>
 
-    <!-- Background Music Toggle -->
-    <button class="music-btn" id="musicToggle" onclick="toggleAudio()" title="Toggle Ambient Music">
-        <i class="fa-solid fa-music"></i>
-    </button>
+    <!-- Background Music Toggle Widget -->
+    <div class="music-widget" id="musicWidget" onclick="toggleAudio()" title="Toggle Mangalyam Song (Sakhi)">
+        <div class="music-btn">
+            <i class="fa-solid fa-music"></i>
+        </div>
+        <span class="song-title-badge" id="songBadge">🎶 Mangalyam (Sakhi)</span>
+    </div>
 
     <!-- Main Web Application -->
     <div class="app-container">
@@ -1202,11 +1237,11 @@
 
     <!-- JavaScript logic -->
     <script>
-        // Open Envelope Intro Animation
+        // Open Envelope Intro Animation & Start Music
         function openInvitation() {
             const overlay = document.getElementById('envelope-overlay');
             overlay.classList.add('opened');
-            initAudio();
+            startAudio();
         }
 
         // Copy Address Toast Notification
@@ -1295,60 +1330,29 @@
             closeRSVPModal();
         }
 
-        // Ambient Web Audio Music Synthesizer
-        let audioCtx = null;
+        // Mangalyam Audio Player Engine
+        const bgAudio = document.getElementById('bgAudio');
         let isPlaying = false;
-        let melodyInterval = null;
 
-        function initAudio() {
-            if (audioCtx) return;
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            if (AudioContext) {
-                audioCtx = new AudioContext();
-            }
-        }
-
-        function playTone(freq, duration) {
-            if (!audioCtx) return;
-            try {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.value = freq;
-
-                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-
-                osc.start();
-                osc.stop(audioCtx.currentTime + duration);
-            } catch (e) {}
+        function startAudio() {
+            if (isPlaying) return;
+            bgAudio.play().then(() => {
+                isPlaying = true;
+                document.getElementById('musicWidget').classList.add('playing');
+                document.getElementById('songBadge').innerText = "🎶 Mangalyam (Sakhi)";
+            }).catch(err => {
+                console.log("Autoplay prevented:", err);
+            });
         }
 
         function toggleAudio() {
-            initAudio();
-            const btn = document.getElementById('musicToggle');
             if (isPlaying) {
+                bgAudio.pause();
                 isPlaying = false;
-                btn.classList.remove('playing');
-                clearInterval(melodyInterval);
+                document.getElementById('musicWidget').classList.remove('playing');
+                document.getElementById('songBadge').innerText = "🔇 Paused";
             } else {
-                if (audioCtx && audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                isPlaying = true;
-                btn.classList.add('playing');
-                
-                // Soothing Indian Classical Raga notes (Mohanam / Bhupali scale)
-                const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
-                let index = 0;
-                melodyInterval = setInterval(() => {
-                    if (!isPlaying) return;
-                    const freq = notes[Math.floor(Math.random() * notes.length)];
-                    playTone(freq, 1.8);
-                }, 800);
+                startAudio();
             }
         }
     </script>

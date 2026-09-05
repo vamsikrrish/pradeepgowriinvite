@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowri & Pradeep | Wedding Invitation</title>
+    <style>
+        :root {
+            --bg: #f7f2ea;
+            --maroon: #6d1830;
+            --gold: #c8a44f;
+            --green: #1f5b4b;
+            --text: #4a3727;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background: #2b140d;
+            color: var(--text)
+        }
+
+        #petals {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden
+        }
+
+        .petal {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f7b6c2;
+            border-radius: 10px 0;
+            opacity: .7;
+            animation: fall linear infinite
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-30px) rotate(0)
+            }
+
+            to {
+                transform: translateY(120vh) rotate(360deg)
+            }
+        }
+
+        .page {
+            max-width: 430px;
+            margin: auto;
+            background: var(--bg);
+            box-shadow: 0 0 40px rgba(0, 0, 0, .35)
+        }
+
+        .hero {
+            padding: 20px;
+            background: linear-gradient(#f9ead0, #f7f2ea);
+            text-align: center
+        }
+
+        .mantra {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #8b6a34;
+            text-transform: uppercase
+        }
+
+        .om {
+            font-size: 44px;
+            color: #b8860b;
+            margin: 8px 0
+        }
+
+        .hero h1 {
+            margin: 8px 0 0;
+            font-size: 15px;
+            letter-spacing: 3px;
+            color: #8b6a34
+        }
+
+        .heroimg {
+            width: 100%;
+            border-radius: 18px;
+            margin: 14px 0;
+            display: block
+        }
+
+        .names {
+            font-size: 34px;
+            line-height: 1.1;
+            color: var(--maroon);
+            font-weight: bold
+        }
+
+        .with {
+            font-size: 18px;
+            font-style: italic;
+            color: #8b6a34
+        }
+
+        .date {
+            font-size: 28px;
+            color: var(--maroon);
+            margin-top: 12px;
+            font-weight: bold
+        }
+
+        .quote {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #6a5442;
+            margin-top: 10px
+        }
+
+        .sec {
+            padding: 20px;
+            border-top: 1px solid #e8dcc8
+        }
+
+        .title {
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: #8b6a34;
+            margin-bottom: 14px
+        }
+
+        .count {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px
+        }
+
+        .box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #e8dcc8
+        }
+
+        .box b {
+            display: block;
+            font-size: 22px;
+            color: var(--maroon)
+        }
+
+        .event {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff3df;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px
+        }
+
+        .card {
+            flex: 1;
+            background: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #eadcc8
+        }
+
+        .card h3 {
+            margin: 0;
+            color: var(--maroon)
+        }
+
+        .venue {
+            text-align: center;
+            background: #fff;
+            border-radius: 14px;
+            padding: 14px;
+            border: 1px solid #eadcc8
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-top: 10px
+        }
+
+        .map {
+            background: var(--maroon);
+            color: #fff
+        }
+
+        .wa {
+            background: var(--green);
+            color: #fff
+        }
+
+        .people {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .p {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #eadcc8
+        }
+
+        .p h4 {
+            margin: 0;
+            color: var(--maroon)
+        }
+
+        .call {
+            display: block;
+            color: var(--green);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 6px
+        }
+
+        footer {
+            background: #3b1c14;
+            color: #f4e5cf;
+            text-align: center;
+            padding: 22px 16px
+        }
+
+        nav {
+            position: sticky;
+            bottom: 0;
+            display: flex;
+            background: #3b1c14
+        }
+
+        nav a {
+            flex: 1;
+            padding: 10px 4px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 11px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="petals"></div>
+    <div class="page">
+        <section class="hero" id="home">
+            <div class="mantra">Sri Rastu • Shubhamastu • Kalyanamastu</div>
+            <div class="om">🕉</div>
+            <h1>WEDDING INVITATION</h1>
+            <img class="heroimg" src="RRS_0364.JPG" alt="Gowri and Pradeep">
+            <div class="names">B. Gowri<div class="with">with</div>C. Pradeep</div>
+            <div class="quote">With the blessings of the Almighty and our beloved elders, we joyfully invite you to
+                celebrate our wedding.</div>
+            <div class="date">06 September 2026</div>
+            <div><b>Sunday · Muhurtham 10:15 PM – 11:15 PM</b></div>
+        </section>
+        <section class="sec">
+            <div class="title">COUNTDOWN</div>
+            <div class="count">
+                <div class="box"><b id="d">0</b><small>Days</small></div>
+                <div class="box"><b id="h">00</b><small>Hours</small></div>
+                <div class="box"><b id="m">00</b><small>Min</small></div>
+                <div class="box"><b id="s">00</b><small>Sec</small></div>
+            </div>
+        </section>
+        <section class="sec" id="events">
+            <div class="title">WEDDING EVENTS</div>
+            <div class="event">
+                <div class="icon">🎉</div>
+                <div class="card">
+                    <h3>Reception</h3>
+                    <div>6 September 2026</div><b>6:00 PM – 9:00 PM</b>
+                </div>
+            </div>
+            <div class="event">
+                <div class="icon">🪔</div>
+                <div class="card">
+                    <h3>Muhurtham</h3>
+                    <div>6 September 2026</div><b>10:15 PM – 11:15 PM</b>
+                </div>
+            </div>
+        </section>
+        <section class="sec" id="venue">
+            <div class="title">VENUE</div>
+            <div class="venue">
+                <img class="heroimg" src="RRS_0391.JPG" alt="Detail" style="height:140px;object-fit:cover">
+                <h2 style="color:#6d1830;margin:6px 0">V.S.R Convention</h2>
+                <div>Anantapur – Tirupati Highway<br>Pileru, Andhra Pradesh</div>
+                <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=V.S.R+Convention+Pileru">📍
+                    Open in Google Maps</a>
+            </div>
+        </section>
+        <section class="sec" id="rsvp">
+            <div class="title">HOSTS & RSVP</div>
+            <div class="people">
+                <div class="p">
+                    <h4>B. Vinod</h4><small>M.B.A</small><a class="call" href="tel:+919992306999">9992306999</a><a
+                        class="call" href="tel:+919985606999">9985606999</a>
+                </div>
+                <div class="p">
+                    <h4>T. Vamsi Krishna</h4><small>B.Tech</small><a class="call"
+                        href="tel:+919490042906">9490042905</a>
+                </div>
+                <a class="btn wa"
+                    href="https://wa.me/919490042905?text=Namaste%20Vamsi%20Krishna,%20We%20are%20happy%20to%20attend%20your%20wedding.%20🙏">💚
+                    RSVP via WhatsApp</a>
+        </section>
+        <footer>Two hearts, two families, one divine beginning. 🙏</footer>
+        <nav><a href="#home">🏠<br>Home</a><a href="#events">📅<br>Events</a><a href="#venue">📍<br>Venue</a><a
+                href="#rsvp">💚<br>RSVP</a></nav>
+    </div>
+    <script>
+        const p = document.getElementById('petals');
+        for (let i = 0; i < 28; i++) { let e = document.createElement('div'); e.className = 'petal'; e.style.left = Math.random() * 100 + '%'; e.style.animationDuration = (6 + Math.random() * 6) + 's'; e.style.animationDelay = (-Math.random() * 8) + 's'; p.appendChild(e); }
+        const t = new Date('2026-09-06T22:15:00');
+        setInterval(() => { let diff = Math.max(0, t - new Date()); let d = Math.floor(diff / 86400000), h = Math.floor(diff % 86400000 / 36e5), m = Math.floor(diff % 36e5 / 6e4), s = Math.floor(diff % 6e4 / 1000);['d', 'h', 'm', 's'].forEach((id, i) => document.getElementById(id).textContent = [d, String(h).padStart(2, '0'), String(m).padStart(2, '0'), String(s).padStart(2, '0')][i]); }, 1000);
+    </script>
+</body>
+
+</html>

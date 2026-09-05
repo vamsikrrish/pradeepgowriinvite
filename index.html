@@ -538,7 +538,7 @@
             transform: scale(1.08);
         }
 
-        /* Venue Section */
+        /* Venue Section & Location Shortcuts */
         .venue-card {
             background: #ffffff;
             border-radius: 18px;
@@ -546,6 +546,7 @@
             box-shadow: var(--shadow-card);
             overflow: hidden;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .venue-img {
@@ -572,6 +573,91 @@
             color: var(--text-muted);
             margin-bottom: 20px;
             line-height: 1.5;
+        }
+
+        .location-shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .shortcut-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 6px;
+            border-radius: 12px;
+            background: #fdf8ef;
+            border: 1px solid var(--border-gold);
+            color: var(--maroon-deep);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .shortcut-btn i {
+            font-size: 18px;
+            color: var(--gold-text);
+        }
+
+        .shortcut-btn:hover {
+            background: var(--maroon-deep);
+            color: #ffffff;
+            border-color: var(--maroon-deep);
+        }
+
+        .shortcut-btn:hover i {
+            color: var(--gold-bright);
+        }
+
+        /* Travel Hubs Info Grid */
+        .travel-hubs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .hub-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hub-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fcf4e8;
+            color: var(--maroon-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .hub-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--maroon-deep);
+        }
+
+        .hub-info p {
+            font-size: 11px;
+            color: var(--text-muted);
         }
 
         .btn-action {
@@ -612,6 +698,32 @@
         .btn-whatsapp:hover {
             background: #20bd5a;
             transform: translateY(-2deg);
+        }
+
+        /* Toast Notification */
+        #toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(30, 9, 13, 0.92);
+            color: var(--gold-bright);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid var(--gold-bright);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            z-index: 10002;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: none;
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         /* Hosts & Contact Section */
@@ -803,6 +915,9 @@
     <!-- Petals and Sparkles Overlay -->
     <div id="petal-container"></div>
 
+    <!-- Toast Notification Popup -->
+    <div id="toast">Address copied to clipboard! 📋</div>
+
     <!-- Interactive Envelope Opening Overlay -->
     <div id="envelope-overlay">
         <div class="envelope-box">
@@ -936,7 +1051,7 @@
             </div>
         </section>
 
-        <!-- VENUE SECTION -->
+        <!-- VENUE SECTION & LOCATION SHORTCUTS -->
         <section class="section-padding" id="venue">
             <div class="section-header">
                 <h2 class="section-title">Venue Location</h2>
@@ -951,9 +1066,61 @@
                         Pileru, Andhra Pradesh
                     </p>
 
-                    <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-map-location-dot"></i> Open in Google Maps
+                    <!-- Quick Location Shortcuts -->
+                    <div class="location-shortcuts-grid">
+                        <a class="shortcut-btn" href="https://www.google.com/maps/dir/?api=1&destination=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span>Navigation</span>
+                        </a>
+                        <a class="shortcut-btn" href="https://maps.apple.com/?q=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>Apple Maps</span>
+                        </a>
+                        <button class="shortcut-btn" onclick="copyAddress()">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy Address</span>
+                        </button>
+                    </div>
+
+                    <a class="btn-action btn-map" style="margin-top: 14px;" href="https://www.google.com/maps/search/?api=1&query=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-map-location-dot"></i> View Full Map View
                     </a>
+                </div>
+            </div>
+
+            <!-- Nearest Transport Hubs -->
+            <div class="section-header" style="margin-top: 30px; margin-bottom: 15px;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; color: var(--gold-text); text-transform: uppercase;">Nearest Travel Hubs</h3>
+            </div>
+
+            <div class="travel-hubs-grid">
+                <div class="hub-card">
+                    <div class="hub-icon"><i class="fa-solid fa-train"></i></div>
+                    <div class="hub-info">
+                        <h4>Pileru Railway Station</h4>
+                        <p>2.0 km (~5 mins)</p>
+                    </div>
+                </div>
+                <div class="hub-card">
+                    <div class="hub-icon"><i class="fa-solid fa-bus"></i></div>
+                    <div class="hub-info">
+                        <h4>Pileru Bus Station</h4>
+                        <p>1.5 km (~4 mins)</p>
+                    </div>
+                </div>
+                <div class="hub-card">
+                    <div class="hub-icon"><i class="fa-solid fa-plane"></i></div>
+                    <div class="hub-info">
+                        <h4>Tirupati Airport (TIR)</h4>
+                        <p>65 km (~1h 15m)</p>
+                    </div>
+                </div>
+                <div class="hub-card">
+                    <div class="hub-icon"><i class="fa-solid fa-train-subway"></i></div>
+                    <div class="hub-info">
+                        <h4>Tirupati Main Junction</h4>
+                        <p>58 km (~1h 10m)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1040,6 +1207,20 @@
             const overlay = document.getElementById('envelope-overlay');
             overlay.classList.add('opened');
             initAudio();
+        }
+
+        // Copy Address Toast Notification
+        function copyAddress() {
+            const address = "V.S.R Convention, Anantapur – Tirupati Highway, Pileru, Andhra Pradesh";
+            navigator.clipboard.writeText(address).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                alert("Address: " + address);
+            });
         }
 
         // Falling Flower Petals & Jasmine Generator

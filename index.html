@@ -3,40 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We joyfully invite you to celebrate the wedding ceremony of B. Gowri & C. Pradeep on 6th September 2026 at V.S.R Convention, Pileru.">
-    <title>Gowri & Pradeep | Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="An Extraordinary Wedding Celebration of B. Gowri & C. Pradeep on 6th September 2026 at V.S.R Convention, Pileru.">
+    <title>Gowri & Pradeep | Royal Matrimonial Invitation</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-dark: #1e090d;
-            --bg-card: #ffffff;
-            --bg-cream: #faf6f0;
-            --maroon-deep: #4a0e17;
-            --maroon-light: #6d1830;
-            --gold-bright: #e5c158;
-            --gold-metallic: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --gold-text: #b8860b;
-            --emerald-accent: #11382b;
-            --emerald-light: #1f5b4b;
-            --text-dark: #2c1810;
-            --text-muted: #6a5442;
-            --border-gold: rgba(200, 164, 79, 0.4);
-            --shadow-card: 0 15px 35px rgba(60, 20, 10, 0.12);
+            --bg-void: #090204;
+            --bg-deep: #140408;
+            --bg-card: rgba(26, 8, 13, 0.7);
+            --gold-primary: #f5cf68;
+            --gold-gradient: linear-gradient(135deg, #fff3a7 0%, #d4af37 40%, #aa771c 70%, #fcf6ba 100%);
+            --gold-glow: rgba(212, 175, 55, 0.35);
+            --ruby-red: #8b001d;
+            --emerald-spark: #00e676;
+            --text-gold: #e6c670;
+            --text-light: #fcefdc;
+            --text-muted: #b89f88;
+            --glass-border: rgba(245, 207, 104, 0.25);
+            --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.2);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
@@ -45,709 +45,40 @@
         }
 
         body {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            background: var(--bg-dark);
-            color: var(--text-dark);
+            font-family: 'Cinzel', serif;
+            background: var(--bg-void);
+            color: var(--text-light);
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Background Sparkles & Petals Canvas */
-        #petal-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 99;
-            overflow: hidden;
-        }
-
-        .petal {
-            position: absolute;
-            top: -50px;
-            pointer-events: none;
-            background: radial-gradient(circle, #ffb7c5 0%, #e65c00 100%);
-            border-radius: 12px 0 12px 0;
-            opacity: 0.8;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            animation: floatFall linear infinite;
-        }
-
-        .jasmine {
-            background: radial-gradient(circle, #ffffff 40%, #fffdd0 100%);
-            border-radius: 50%;
-        }
-
-        @keyframes floatFall {
-            0% {
-                transform: translateY(0) rotate(0deg) translateX(0);
-                opacity: 0.9;
-            }
-            50% {
-                transform: translateY(60vh) rotate(180deg) translateX(25px);
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg) translateX(-20px);
-                opacity: 0.1;
-            }
-        }
-
-        /* Interactive Wax Seal Envelope Intro Modal */
-        #envelope-overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at center, #3b0f16 0%, #170407 100%);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1), transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        #envelope-overlay.opened {
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(1.1);
-        }
-
-        .envelope-box {
-            width: 100%;
-            max-width: 420px;
-            background: #2a0910;
-            border: 2px solid var(--gold-bright);
-            border-radius: 16px;
-            padding: 35px 25px;
-            text-align: center;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 30px rgba(229, 193, 88, 0.25);
-            position: relative;
-            animation: pulseGlow 3s infinite ease-in-out;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 25px rgba(229, 193, 88, 0.2); }
-            50% { box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(229, 193, 88, 0.45); }
-        }
-
-        .envelope-top-mantra {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: var(--gold-bright);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .envelope-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 42px;
-            background: var(--gold-metallic);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 10px 0;
-        }
-
-        .envelope-subtext {
-            color: #d1b894;
-            font-size: 16px;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .wax-seal-btn {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto;
-            background: radial-gradient(circle at 30% 30%, #d4af37, #855812);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2b0b11;
-            font-size: 32px;
-            cursor: pointer;
-            border: 3px solid #fcf6ba;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.6);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .wax-seal-btn:hover {
-            transform: scale(1.08) rotate(5deg);
-            box-shadow: 0 12px 28px rgba(229, 193, 88, 0.6), inset 0 2px 4px rgba(255,255,255,0.8);
-        }
-
-        .seal-hint {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #d1b894;
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        /* Main Container */
-        .app-container {
-            max-width: 460px;
-            margin: 0 auto;
-            background: var(--bg-cream);
             min-height: 100vh;
-            position: relative;
-            box-shadow: 0 0 50px rgba(0,0,0,0.6);
-            padding-bottom: 80px;
         }
 
-        /* Music Toggle Floating Pill Widget */
-        .music-widget {
+        /* Fullscreen WebGL/Canvas VFX Layer */
+        #vfx-canvas {
             position: fixed;
-            top: 20px;
-            right: 15px;
-            z-index: 1000;
-            background: rgba(30, 9, 13, 0.9);
-            border: 1px solid var(--gold-bright);
-            border-radius: 25px;
-            padding: 6px 14px 6px 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            color: var(--gold-bright);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
         }
 
-        .music-widget:hover {
-            transform: scale(1.04);
-            background: var(--maroon-deep);
-        }
-
-        .music-btn {
-            width: 32px;
-            height: 32px;
-            background: var(--maroon-deep);
-            border: 1px solid var(--gold-bright);
-            border-radius: 50%;
-            color: var(--gold-bright);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .music-widget.playing .music-btn {
-            animation: spinMusic 6s linear infinite;
-            background: #6d1830;
-            color: #ffffff;
-        }
-
-        .song-title-badge {
-            max-width: 140px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #f7e6c4;
-        }
-
-        @keyframes spinMusic {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Decorative Header Frames */
-        .gold-border-decor {
-            width: 100%;
-            height: 8px;
-            background: var(--gold-metallic);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 35px 25px 25px 25px;
-            text-align: center;
-            background: radial-gradient(circle at top, #fdf8ef 0%, #f6ebe0 100%);
-            position: relative;
-        }
-
-        .mantra-header {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            letter-spacing: 2.5px;
-            color: var(--maroon-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .om-symbol {
-            font-size: 38px;
-            color: var(--gold-text);
-            margin: 4px 0 10px 0;
-            display: inline-block;
-            filter: drop-shadow(0 2px 4px rgba(184, 134, 11, 0.2));
-        }
-
-        .invitation-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            letter-spacing: 4px;
-            color: var(--gold-text);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero-img-frame {
-            position: relative;
-            border-radius: 20px;
-            padding: 8px;
-            background: #ffffff;
-            border: 1px solid var(--border-gold);
-            box-shadow: var(--shadow-card);
-            margin: 0 auto 25px auto;
-            overflow: hidden;
-        }
-
-        .hero-img-frame img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 14px;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-img-frame:hover img {
-            transform: scale(1.03);
-        }
-
-        .couple-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 48px;
-            color: var(--maroon-deep);
-            line-height: 1.15;
-            margin-bottom: 10px;
-        }
-
-        .couple-names span {
-            display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-style: italic;
-            color: var(--gold-text);
-            margin: 4px 0;
-        }
-
-        .invitation-quote {
-            font-size: 17px;
-            line-height: 1.6;
-            color: var(--text-muted);
-            font-style: italic;
-            max-width: 360px;
-            margin: 15px auto 20px auto;
-        }
-
-        .main-date-badge {
-            display: inline-block;
-            background: var(--maroon-deep);
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 30px;
-            border: 1px solid var(--gold-bright);
-            box-shadow: 0 8px 20px rgba(74, 14, 23, 0.25);
-            margin-top: 10px;
-        }
-
-        .main-date-badge .day-date {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--gold-bright);
-        }
-
-        .main-date-badge .muhurtham-time {
-            font-size: 15px;
-            margin-top: 2px;
-            color: #f7e6c4;
-        }
-
-        /* Section Global Styling */
-        .section-padding {
-            padding: 30px 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.25);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            letter-spacing: 3px;
-            color: var(--maroon-deep);
-            text-transform: uppercase;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 6px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background: var(--gold-bright);
-        }
-
-        /* Countdown Section */
-        .countdown-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .countdown-card {
-            background: #ffffff;
-            border: 1px solid var(--border-gold);
-            border-radius: 14px;
-            padding: 14px 6px;
-            text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
-        }
-
-        .countdown-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .countdown-num {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--maroon-deep);
-            line-height: 1;
-        }
-
-        .countdown-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-
-        .calendar-btn-wrapper {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .calendar-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #ffffff;
-            color: var(--maroon-deep);
-            border: 1px solid var(--maroon-deep);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .calendar-btn:hover {
-            background: var(--maroon-deep);
-            color: #ffffff;
-        }
-
-        /* Timeline / Events Section */
-        .event-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 18px;
-            border: 1px solid var(--border-gold);
-            box-shadow: var(--shadow-card);
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--maroon-light);
-        }
-
-        .event-icon-box {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            background: #fdf5ea;
-            border: 1px solid var(--border-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: var(--maroon-deep);
-            flex-shrink: 0;
-        }
-
-        .event-details h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            color: var(--maroon-deep);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .event-time-badge {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--gold-text);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 6px;
-        }
-
-        .event-desc {
-            font-size: 15px;
-            color: var(--text-muted);
-        }
-
-        /* Gallery Grid Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-            display: block;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        /* Venue Section & Location Shortcuts */
-        .venue-card {
-            background: #ffffff;
-            border-radius: 18px;
-            border: 1px solid var(--border-gold);
-            box-shadow: var(--shadow-card);
-            overflow: hidden;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .venue-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .venue-info {
-            padding: 22px 20px;
-        }
-
-        .venue-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            color: var(--maroon-deep);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .venue-address {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .location-shortcuts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .shortcut-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px 6px;
-            border-radius: 12px;
-            background: #fdf8ef;
-            border: 1px solid var(--border-gold);
-            color: var(--maroon-deep);
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        .shortcut-btn i {
-            font-size: 18px;
-            color: var(--gold-text);
-        }
-
-        .shortcut-btn:hover {
-            background: var(--maroon-deep);
-            color: #ffffff;
-            border-color: var(--maroon-deep);
-        }
-
-        .shortcut-btn:hover i {
-            color: var(--gold-bright);
-        }
-
-        /* Travel Hubs Info Grid */
-        .travel-hubs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .hub-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 12px;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .hub-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #fcf4e8;
-            color: var(--maroon-deep);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .hub-info h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--maroon-deep);
-        }
-
-        .hub-info p {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .btn-action {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-map {
-            background: var(--maroon-deep);
-            color: #ffffff;
-            box-shadow: 0 6px 18px rgba(74, 14, 23, 0.25);
-        }
-
-        .btn-map:hover {
-            background: #6d1522;
-            transform: translateY(-2deg);
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: #ffffff;
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
-            margin-top: 12px;
-        }
-
-        .btn-whatsapp:hover {
-            background: #20bd5a;
-            transform: translateY(-2deg);
-        }
-
-        /* Toast Notification */
+        /* Floating Toast */
         #toast {
             position: fixed;
-            bottom: 80px;
+            top: 25px;
             left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: rgba(30, 9, 13, 0.92);
-            color: var(--gold-bright);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(20, 4, 8, 0.95);
+            color: var(--gold-primary);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
             font-weight: 600;
-            border: 1px solid var(--gold-bright);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            z-index: 10002;
+            border: 1px solid var(--gold-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
+            z-index: 100000;
             opacity: 0;
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            pointer-events: none;
+            backdrop-filter: blur(12px);
         }
 
         #toast.show {
@@ -755,62 +86,753 @@
             opacity: 1;
         }
 
-        /* Hosts & Contact Section */
-        .hosts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-bottom: 20px;
+        /* Billion-Dollar Cinematic Wax Seal & Envelope Screen */
+        #cinema-intro {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, #24050d 0%, #080103 100%);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 25px;
+            transition: opacity 1.4s cubic-bezier(0.77, 0, 0.175, 1), transform 1.4s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        .host-card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 16px;
+        #cinema-intro.opened {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.15);
+        }
+
+        .envelope-crest {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(20, 4, 8, 0.85);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 45px 30px;
             text-align: center;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 40px var(--gold-glow);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .host-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--maroon-deep);
+        /* Animated Border Beam */
+        .envelope-crest::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, var(--gold-primary), transparent 30%);
+            animation: rotateBeam 6s linear infinite;
+            z-index: 0;
+            opacity: 0.4;
         }
 
-        .host-degree {
-            font-family: 'Montserrat', sans-serif;
+        .envelope-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes rotateBeam {
+            100% { transform: rotate(360deg); }
+        }
+
+        .mantra-top {
+            font-family: 'Outfit', sans-serif;
             font-size: 11px;
-            color: var(--gold-text);
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(245, 207, 104, 0.4);
+        }
+
+        .royal-om {
+            font-size: 45px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 6px 0;
+            display: inline-block;
+            filter: drop-shadow(0 0 15px rgba(245, 207, 104, 0.4));
+        }
+
+        .intro-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 54px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+
+        .intro-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Interactive 3D Holographic Wax Seal */
+        .royal-seal-trigger {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto;
+            background: radial-gradient(circle at 35% 35%, #ffd740 0%, #b38728 50%, #4a3000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a080d;
+            font-size: 36px;
+            cursor: pointer;
+            border: 2px solid #fff3a7;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 35px var(--gold-glow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .royal-seal-trigger:hover {
+            transform: scale(1.12) rotate(8deg);
+            box-shadow: 0 18px 45px rgba(245, 207, 104, 0.6), 0 0 50px rgba(245, 207, 104, 0.8);
+        }
+
+        .seal-pulse-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            animation: ringPulse 2s infinite ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ringPulse {
+            0% { transform: scale(0.9); opacity: 1; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        .seal-caption {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--text-gold);
+            margin-top: 18px;
+            text-transform: uppercase;
+        }
+
+        /* Music Equalizer Visualizer Widget */
+        .music-vfx-widget {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: rgba(18, 4, 8, 0.85);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 8px 16px 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px var(--gold-glow);
+            transition: all 0.3s ease;
+        }
+
+        .music-vfx-widget:hover {
+            transform: translateY(-2px) scale(1.03);
+            border-color: var(--gold-primary);
+        }
+
+        .eq-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 18px;
+            width: 20px;
+        }
+
+        .eq-bar {
+            flex: 1;
+            background: var(--gold-primary);
+            border-radius: 2px;
+            height: 4px;
+            transition: height 0.15s ease;
+        }
+
+        .music-vfx-widget.playing .eq-bar:nth-child(1) { animation: eqAnim 0.7s infinite ease-in-out alternate; }
+        .music-vfx-widget.playing .eq-bar:nth-child(2) { animation: eqAnim 0.9s 0.2s infinite ease-in-out alternate; }
+        .music-vfx-widget.playing .eq-bar:nth-child(3) { animation: eqAnim 0.6s 0.4s infinite ease-in-out alternate; }
+
+        @keyframes eqAnim {
+            0% { height: 3px; }
+            100% { height: 18px; }
+        }
+
+        .music-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-gold);
+            letter-spacing: 1px;
+        }
+
+        /* App Container */
+        .app-view {
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 100px;
+        }
+
+        /* Luxury Gold Divider */
+        .gold-divider {
+            width: 100%;
+            height: 2px;
+            background: var(--gold-gradient);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        /* Hero Header Section */
+        .hero-vfx-section {
+            padding: 40px 24px 30px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .glowing-header-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3.5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px rgba(245, 207, 104, 0.4);
+        }
+
+        .hero-om {
+            font-size: 42px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            display: inline-block;
+            filter: drop-shadow(0 0 12px var(--gold-glow));
+        }
+
+        .invitation-badge-top {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: var(--text-gold);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        /* Interactive 3D Tilt Frame for Couple Photo */
+        .tilt-card-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .tilt-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 10px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(16px);
+            transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tilt-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 18px;
             display: block;
         }
 
-        .phone-link {
+        .specular-shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+            pointer-events: none;
+            border-radius: 24px;
+        }
+
+        .couple-name-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 56px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin: 10px 0;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
+        }
+
+        .couple-name-title span {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-gold);
+            margin: 4px 0;
+        }
+
+        .hero-poetic-quote {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-light);
+            font-style: italic;
+            max-width: 380px;
+            margin: 18px auto 25px auto;
+            opacity: 0.9;
+        }
+
+        .highlight-date-pill {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(30, 6, 12, 0.9);
+            border: 1px solid var(--gold-primary);
+            padding: 14px 32px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px var(--gold-glow);
+        }
+
+        .highlight-date-pill .date-main {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+        }
+
+        .highlight-date-pill .muhurtham-sub {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        /* Global Section Card Styles */
+        .vfx-section {
+            padding: 35px 20px;
+        }
+
+        .vfx-title-block {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .vfx-section-header {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+            text-shadow: 0 0 12px var(--gold-glow);
+        }
+
+        .vfx-section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: var(--gold-gradient);
+            box-shadow: 0 0 8px var(--gold-primary);
+        }
+
+        /* VFX Countdown Cards */
+        .countdown-vfx-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .count-vfx-box {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 16px 8px;
+            text-align: center;
+            backdrop-filter: blur(16px);
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .count-vfx-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+        }
+
+        .count-vfx-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .count-vfx-lbl {
+            font-family: 'Outfit', sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .cal-btn-box {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .vfx-gold-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gold-gradient);
+            color: #0f0306;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .vfx-gold-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(245, 207, 104, 0.6);
+        }
+
+        /* Photo Gallery Holographic Grid */
+        .gallery-vfx-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .gallery-vfx-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-vfx-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: block;
+        }
+
+        .gallery-vfx-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Schedule Timeline Cards */
+        .event-vfx-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(16px);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-vfx-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gold-gradient);
+            box-shadow: 0 0 10px var(--gold-primary);
+        }
+
+        .event-vfx-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(245, 207, 104, 0.1);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--gold-primary);
+            flex-shrink: 0;
+        }
+
+        .event-vfx-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: var(--gold-primary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .event-vfx-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .event-vfx-desc {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Venue & Travel Grid */
+        .venue-vfx-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .venue-vfx-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .venue-vfx-content {
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .venue-vfx-name {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            color: var(--gold-primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .venue-vfx-addr {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 22px;
+            line-height: 1.5;
+        }
+
+        /* Shortcuts Grid */
+        .vfx-shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .vfx-shortcut-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 14px 8px;
+            border-radius: 16px;
+            background: rgba(245, 207, 104, 0.08);
+            border: 1px solid var(--glass-border);
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .vfx-shortcut-btn i {
+            font-size: 20px;
+            color: var(--gold-primary);
+        }
+
+        .vfx-shortcut-btn:hover {
+            background: var(--gold-gradient);
+            color: #0f0306;
+            transform: translateY(-3px);
+        }
+
+        .vfx-shortcut-btn:hover i {
+            color: #0f0306;
+        }
+
+        /* Transport Hubs Grid */
+        .vfx-hubs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .vfx-hub-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 14px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vfx-hub-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(245, 207, 104, 0.1);
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .vfx-hub-info h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .vfx-hub-info p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Hosts & RSVP Section */
+        .vfx-hosts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .vfx-host-card {
+            background: var(--bg-card);
+            border-radius: 18px;
+            padding: 18px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .vfx-host-name {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .vfx-host-deg {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .vfx-phone-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: var(--emerald-light);
+            color: var(--emerald-spark);
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
             font-weight: 600;
             margin-top: 4px;
             transition: color 0.2s ease;
         }
 
-        .phone-link:hover {
-            color: var(--maroon-deep);
+        .vfx-whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
         }
 
-        /* RSVP Modal */
+        .vfx-whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        /* RSVP Holographic Modal */
         #rsvp-modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 10001;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -825,350 +847,371 @@
             pointer-events: auto;
         }
 
-        .modal-content {
-            background: #ffffff;
-            border-radius: 20px;
+        .modal-vfx-content {
+            background: rgba(20, 4, 8, 0.95);
+            border-radius: 24px;
             width: 100%;
-            max-width: 400px;
-            padding: 25px;
-            border: 2px solid var(--gold-bright);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            max-width: 420px;
+            padding: 30px 25px;
+            border: 1px solid var(--gold-primary);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 30px var(--gold-glow);
             position: relative;
         }
 
-        .close-modal {
+        .close-vfx-modal {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 18px;
+            right: 18px;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 22px;
             color: var(--text-muted);
             cursor: pointer;
         }
 
-        .modal-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            color: var(--maroon-deep);
+        .modal-vfx-title {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: var(--gold-primary);
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
-        .form-group {
-            margin-bottom: 15px;
+        .form-vfx-group {
+            margin-bottom: 18px;
         }
 
-        .form-group label {
+        .form-vfx-group label {
             display: block;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 12px;
             font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid var(--border-gold);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--maroon-light);
-        }
-
-        /* Visit Counter Badge */
-        .visit-counter-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(229, 193, 88, 0.1);
-            border: 1px solid var(--border-gold);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            color: var(--gold-bright);
-            margin-top: 14px;
-        }
-
-        /* Footer */
-        .site-footer {
-            background: #25090f;
-            color: #e5cfb3;
-            text-align: center;
-            padding: 30px 20px 90px 20px;
-            font-size: 16px;
-            border-top: 2px solid var(--gold-bright);
-        }
-
-        .footer-quote {
-            font-family: 'Great Vibes', cursive;
-            font-size: 32px;
-            color: var(--gold-bright);
+            color: var(--text-light);
             margin-bottom: 8px;
         }
 
-        /* Bottom Sticky Navigation */
-        .bottom-nav {
+        .form-vfx-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+        }
+
+        .form-vfx-control:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        /* Footer */
+        .vfx-footer {
+            background: #060103;
+            text-align: center;
+            padding: 35px 20px 110px 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-script {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .footer-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .visit-counter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 207, 104, 0.08);
+            border: 1px solid var(--glass-border);
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            color: var(--gold-primary);
+            margin-top: 18px;
+        }
+
+        /* Bottom Floating Bar */
+        .bottom-vfx-nav {
             position: fixed;
-            bottom: 0;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100%;
-            max-width: 460px;
-            background: rgba(30, 9, 13, 0.95);
-            backdrop-filter: blur(12px);
+            width: calc(100% - 24px);
+            max-width: 440px;
+            background: rgba(18, 4, 8, 0.92);
+            backdrop-filter: blur(20px);
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
-            z-index: 1000;
-            border-top: 1px solid var(--border-gold);
+            z-index: 9000;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
         }
 
-        .nav-item {
-            color: #d1b894;
+        .nav-vfx-item {
+            color: var(--text-muted);
             text-decoration: none;
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 10px;
-            font-weight: 500;
-            transition: color 0.2s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .nav-item i {
+        .nav-vfx-item i {
             display: block;
             font-size: 18px;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
-        .nav-item:hover, .nav-item.active {
-            color: var(--gold-bright);
+        .nav-vfx-item:hover, .nav-vfx-item.active {
+            color: var(--gold-primary);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HTML5 Audio element for Sakhi Mangalyam Song -->
-    <audio id="bgAudio" loop preload="auto" src="assets/audio/audio.mp3"></audio>
+    <!-- WebGL & Canvas VFX Particle Surface -->
+    <canvas id="vfx-canvas"></canvas>
 
-    <!-- Petals and Sparkles Overlay -->
-    <div id="petal-container"></div>
+    <!-- Background Audio Element -->
+    <audio id="bgAudio" loop preload="auto" src="assets/audio/audio.mp3"></audio>
 
     <!-- Toast Notification Popup -->
     <div id="toast">Address copied to clipboard! 📋</div>
 
-    <!-- Interactive Envelope Opening Overlay -->
-    <div id="envelope-overlay">
-        <div class="envelope-box">
-            <div class="envelope-top-mantra">Sri Rastu • Shubhamastu • Kalyanamastu</div>
-            <div class="om-symbol">🕉</div>
-            <div class="envelope-names">Gowri & Pradeep</div>
-            <div class="envelope-subtext">You are cordially invited to celebrate our Wedding</div>
-            <div class="wax-seal-btn" onclick="openInvitation()" title="Tap to Open Invitation & Play Song">
-                <i class="fa-solid fa-envelope-open-text"></i>
+    <!-- CINEMATIC INTRO SCREEN -->
+    <div id="cinema-intro">
+        <div class="envelope-crest">
+            <div class="envelope-inner">
+                <div class="mantra-top">Sri Rastu • Shubhamastu • Kalyanamastu</div>
+                <div class="royal-om">🕉</div>
+                <div class="intro-title">Gowri & Pradeep</div>
+                <div class="intro-subtitle">Royal Wedding Celebration</div>
+                
+                <div class="royal-seal-trigger" onclick="unveilCinemaExperience()" title="Touch Seal to Unveil">
+                    <i class="fa-solid fa-crown"></i>
+                    <div class="seal-pulse-ring"></div>
+                </div>
+                <div class="seal-caption">Touch Royal Seal To Open</div>
             </div>
-            <div class="seal-hint">Tap Wax Seal to Open</div>
         </div>
     </div>
 
-    <!-- Background Music Toggle Widget -->
-    <div class="music-widget" id="musicWidget" onclick="toggleAudio()" title="Toggle Mangalyam Song (Sakhi)">
-        <div class="music-btn">
-            <i class="fa-solid fa-music"></i>
+    <!-- AUDIO EQUALIZER WIDGET -->
+    <div class="music-vfx-widget" id="musicWidget" onclick="toggleAudio()" title="Toggle Background Music">
+        <div class="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
         </div>
-        <span class="song-title-badge" id="songBadge">🎶 Mangalyam (Sakhi)</span>
+        <span class="music-label" id="songLabel">🎶 Sakhi Mangalyam</span>
     </div>
 
-    <!-- Main Web Application -->
-    <div class="app-container">
+    <!-- MAIN APP VIEW -->
+    <div class="app-view">
 
-        <div class="gold-border-decor"></div>
+        <div class="gold-divider"></div>
 
         <!-- HERO SECTION -->
-        <section class="hero-section" id="home">
-            <div class="mantra-header">Sri Rastu • Shubhamastu • Kalyanamastu</div>
-            <div class="om-symbol">🕉</div>
-            <div class="invitation-label">Wedding Invitation</div>
+        <section class="hero-vfx-section" id="home">
+            <div class="glowing-header-tag">Sri Rastu • Shubhamastu • Kalyanamastu</div>
+            <div class="hero-om">🕉</div>
+            <div class="invitation-badge-top">Matrimonial Invitation</div>
 
-            <div class="hero-img-frame">
-                <img src="assets/images/RRS_0364.JPG" alt="Gowri & Pradeep" loading="eager" decoding="async">
+            <!-- 3D Gyro/Cursor Tilt Photo Card -->
+            <div class="tilt-card-container">
+                <div class="tilt-card" id="tiltCard">
+                    <img src="assets/images/RRS_0364.JPG" alt="Gowri & Pradeep" loading="eager" decoding="async">
+                    <div class="specular-shine"></div>
+                </div>
             </div>
 
-            <h1 class="couple-names">
+            <h1 class="couple-name-title">
                 B. Gowri
                 <span>with</span>
                 C. Pradeep
             </h1>
 
-            <p class="invitation-quote">
-                "With the blessings of the Almighty and our beloved elders, we joyfully invite you and your family to join us as we celebrate our holy matrimony."
+            <p class="hero-poetic-quote">
+                "Two souls bound by destiny, blessed by elders, stepping into a lifetime of eternal love and divine harmony."
             </p>
 
-            <div class="main-date-badge">
-                <div class="day-date"><i class="fa-regular fa-calendar-check"></i> Sunday, 06 September 2026</div>
-                <div class="muhurtham-time">Muhurtham: 10:15 PM – 11:15 PM</div>
+            <div class="highlight-date-pill">
+                <div class="date-main"><i class="fa-regular fa-calendar-check"></i> Sunday, 06 September 2026</div>
+                <div class="muhurtham-sub">Sumuhurtham: 10:15 PM – 11:15 PM</div>
             </div>
         </section>
 
         <!-- COUNTDOWN SECTION -->
-        <section class="section-padding" id="countdown">
-            <div class="section-header">
-                <h2 class="section-title">Counting Down To The Big Day</h2>
+        <section class="vfx-section" id="countdown">
+            <div class="vfx-title-block">
+                <h2 class="vfx-section-header">Countdown To Muhurtham</h2>
             </div>
 
-            <div class="countdown-grid">
-                <div class="countdown-card">
-                    <div class="countdown-num" id="days">00</div>
-                    <div class="countdown-label">Days</div>
+            <div class="countdown-vfx-grid">
+                <div class="count-vfx-box">
+                    <div class="count-vfx-val" id="days">00</div>
+                    <div class="count-vfx-lbl">Days</div>
                 </div>
-                <div class="countdown-card">
-                    <div class="countdown-num" id="hours">00</div>
-                    <div class="countdown-label">Hours</div>
+                <div class="count-vfx-box">
+                    <div class="count-vfx-val" id="hours">00</div>
+                    <div class="count-vfx-lbl">Hours</div>
                 </div>
-                <div class="countdown-card">
-                    <div class="countdown-num" id="mins">00</div>
-                    <div class="countdown-label">Mins</div>
+                <div class="count-vfx-box">
+                    <div class="count-vfx-val" id="mins">00</div>
+                    <div class="count-vfx-lbl">Mins</div>
                 </div>
-                <div class="countdown-card">
-                    <div class="countdown-num" id="secs">00</div>
-                    <div class="countdown-label">Secs</div>
+                <div class="count-vfx-box">
+                    <div class="count-vfx-val" id="secs">00</div>
+                    <div class="count-vfx-lbl">Secs</div>
                 </div>
             </div>
 
-            <div class="calendar-btn-wrapper">
-                <button class="calendar-btn" onclick="addToCalendar()">
+            <div class="cal-btn-box">
+                <button class="vfx-gold-btn" onclick="addToCalendar()">
                     <i class="fa-solid fa-calendar-plus"></i> Add to Google Calendar
                 </button>
             </div>
         </section>
 
         <!-- PHOTO GALLERY SECTION -->
-        <section class="section-padding" id="gallery">
-            <div class="section-header">
-                <h2 class="section-title">Moments & Memories</h2>
+        <section class="vfx-section" id="gallery">
+            <div class="vfx-title-block">
+                <h2 class="vfx-section-header">Moments & Memories</h2>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/images/RRS_0364.JPG" alt="Gowri & Pradeep 1" loading="lazy" decoding="async">
+            <div class="gallery-vfx-grid">
+                <div class="gallery-vfx-card">
+                    <img src="assets/images/RRS_0364.JPG" alt="Photo 1" loading="lazy" decoding="async">
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/RRS_0391.JPG" alt="Gowri & Pradeep 2" loading="lazy" decoding="async">
+                <div class="gallery-vfx-card">
+                    <img src="assets/images/RRS_0391.JPG" alt="Photo 2" loading="lazy" decoding="async">
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/RRS_0427.JPG" alt="Gowri & Pradeep 3" loading="lazy" decoding="async">
+                <div class="gallery-vfx-card">
+                    <img src="assets/images/RRS_0427.JPG" alt="Photo 3" loading="lazy" decoding="async">
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/RRS_0045.JPG" alt="Gowri & Pradeep 4" loading="lazy" decoding="async">
+                <div class="gallery-vfx-card">
+                    <img src="assets/images/RRS_0045.JPG" alt="Photo 4" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
 
-        <!-- EVENTS SECTION -->
-        <section class="section-padding" id="events">
-            <div class="section-header">
-                <h2 class="section-title">Wedding Schedule</h2>
+        <!-- EVENTS SCHEDULE SECTION -->
+        <section class="vfx-section" id="events">
+            <div class="vfx-title-block">
+                <h2 class="vfx-section-header">Auspicious Events</h2>
             </div>
 
-            <div class="event-card">
-                <div class="event-icon-box">🎉</div>
-                <div class="event-details">
-                    <h3>Reception</h3>
-                    <div class="event-time-badge">
+            <div class="event-vfx-card">
+                <div class="event-vfx-icon">🎉</div>
+                <div class="event-vfx-info">
+                    <h3>Grand Reception</h3>
+                    <div class="event-vfx-badge">
                         <i class="fa-regular fa-clock"></i> Sunday, 6 Sept 2026 • 6:00 PM – 9:00 PM
                     </div>
-                    <p class="event-desc">Join us for a grand evening of feast, music, and warm blessings as we celebrate together.</p>
+                    <p class="event-vfx-desc">An evening of celebratory dinner, vibrant music, and warm blessings.</p>
                 </div>
             </div>
 
-            <div class="event-card">
-                <div class="event-icon-box">🪔</div>
-                <div class="event-details">
-                    <h3>Muhurtham</h3>
-                    <div class="event-time-badge">
+            <div class="event-vfx-card">
+                <div class="event-vfx-icon">🪔</div>
+                <div class="event-vfx-info">
+                    <h3>Sumuhurtham</h3>
+                    <div class="event-vfx-badge">
                         <i class="fa-regular fa-clock"></i> Sunday, 6 Sept 2026 • 10:15 PM – 11:15 PM
                     </div>
-                    <p class="event-desc">The auspicious moment of Sumuhurtham & Tying of the Sacred Mangalsutra.</p>
+                    <p class="event-vfx-desc">The sacred hour of Mangalya Dharna & Veda Chanting.</p>
                 </div>
             </div>
         </section>
 
-        <!-- VENUE SECTION & LOCATION SHORTCUTS -->
-        <section class="section-padding" id="venue">
-            <div class="section-header">
-                <h2 class="section-title">Venue Location</h2>
+        <!-- VENUE LOCATION SECTION -->
+        <section class="vfx-section" id="venue">
+            <div class="vfx-title-block">
+                <h2 class="vfx-section-header">Royal Venue</h2>
             </div>
 
-            <div class="venue-card">
-                <img class="venue-img" src="assets/images/venue.png" alt="V.S.R Convention" loading="lazy" decoding="async">
-                <div class="venue-info">
-                    <h3 class="venue-name">V.S.R Convention</h3>
-                    <p class="venue-address">
+            <div class="venue-vfx-card">
+                <img class="venue-vfx-img" src="assets/images/venue.png" alt="V.S.R Convention" loading="lazy" decoding="async">
+                <div class="venue-vfx-content">
+                    <h3 class="venue-vfx-name">V.S.R Convention</h3>
+                    <p class="venue-vfx-addr">
                         Anantapur – Tirupati Highway<br>
                         Pileru, Andhra Pradesh
                     </p>
 
-                    <!-- Quick Location Shortcuts -->
-                    <div class="location-shortcuts-grid">
-                        <a class="shortcut-btn" href="https://www.google.com/maps/dir/?api=1&destination=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-diamond-turn-right"></i>
+                    <!-- Location Shortcuts -->
+                    <div class="vfx-shortcuts-grid">
+                        <a class="vfx-shortcut-btn" href="https://www.google.com/maps/dir/?api=1&destination=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-location-arrow"></i>
                             <span>Navigation</span>
                         </a>
-                        <a class="shortcut-btn" href="https://maps.apple.com/?q=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                        <a class="vfx-shortcut-btn" href="https://maps.apple.com/?q=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-apple"></i>
                             <span>Apple Maps</span>
                         </a>
-                        <button class="shortcut-btn" onclick="copyAddress()">
+                        <button class="vfx-shortcut-btn" onclick="copyAddress()">
                             <i class="fa-regular fa-copy"></i>
                             <span>Copy Address</span>
                         </button>
                     </div>
 
-                    <a class="btn-action btn-map" style="margin-top: 14px;" href="https://www.google.com/maps/search/?api=1&query=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-map-location-dot"></i> View Full Map View
+                    <a class="vfx-gold-btn" style="width: 100%; margin-top: 10px;" href="https://www.google.com/maps/search/?api=1&query=V.S.R+Convention+Pileru" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-map-marked-alt"></i> Open Full Map View
                     </a>
                 </div>
             </div>
 
-            <!-- Nearest Transport Hubs -->
-            <div class="section-header" style="margin-top: 30px; margin-bottom: 15px;">
-                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; color: var(--gold-text); text-transform: uppercase;">Nearest Travel Hubs</h3>
+            <!-- Transport Hubs -->
+            <div class="vfx-title-block" style="margin-top: 30px; margin-bottom: 15px;">
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 11px; letter-spacing: 3px; color: var(--gold-primary); text-transform: uppercase;">Nearest Travel Hubs</h3>
             </div>
 
-            <div class="travel-hubs-grid">
-                <div class="hub-card">
-                    <div class="hub-icon"><i class="fa-solid fa-train"></i></div>
-                    <div class="hub-info">
+            <div class="vfx-hubs-grid">
+                <div class="vfx-hub-card">
+                    <div class="vfx-hub-icon"><i class="fa-solid fa-train"></i></div>
+                    <div class="vfx-hub-info">
                         <h4>Pileru Railway Station</h4>
                         <p>2.0 km (~5 mins)</p>
                     </div>
                 </div>
-                <div class="hub-card">
-                    <div class="hub-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div class="hub-info">
+                <div class="vfx-hub-card">
+                    <div class="vfx-hub-icon"><i class="fa-solid fa-bus"></i></div>
+                    <div class="vfx-hub-info">
                         <h4>Pileru Bus Station</h4>
                         <p>1.5 km (~4 mins)</p>
                     </div>
                 </div>
-                <div class="hub-card">
-                    <div class="hub-icon"><i class="fa-solid fa-plane"></i></div>
-                    <div class="hub-info">
+                <div class="vfx-hub-card">
+                    <div class="vfx-hub-icon"><i class="fa-solid fa-plane"></i></div>
+                    <div class="vfx-hub-info">
                         <h4>Tirupati Airport (TIR)</h4>
                         <p>65 km (~1h 15m)</p>
                     </div>
                 </div>
-                <div class="hub-card">
-                    <div class="hub-icon"><i class="fa-solid fa-train-subway"></i></div>
-                    <div class="hub-info">
-                        <h4>Tirupati Main Junction</h4>
+                <div class="vfx-hub-card">
+                    <div class="vfx-hub-icon"><i class="fa-solid fa-train-subway"></i></div>
+                    <div class="vfx-hub-info">
+                        <h4>Tirupati Junction</h4>
                         <p>58 km (~1h 10m)</p>
                     </div>
                 </div>
@@ -1176,95 +1219,184 @@
         </section>
 
         <!-- HOSTS & RSVP SECTION -->
-        <section class="section-padding" id="rsvp">
-            <div class="section-header">
-                <h2 class="section-title">Hosts & RSVP</h2>
+        <section class="vfx-section" id="rsvp">
+            <div class="vfx-title-block">
+                <h2 class="vfx-section-header">Hosts & RSVP</h2>
             </div>
 
-            <div class="hosts-grid">
-                <div class="host-card">
-                    <div class="host-name">B. Vinod</div>
-                    <span class="host-degree">M.B.A</span>
-                    <a class="phone-link" href="tel:+919992306999"><i class="fa-solid fa-phone"></i> 9992306999</a><br>
-                    <a class="phone-link" href="tel:+919985606999"><i class="fa-solid fa-phone"></i> 9985606999</a>
+            <div class="vfx-hosts-grid">
+                <div class="vfx-host-card">
+                    <div class="vfx-host-name">B. Vinod</div>
+                    <span class="vfx-host-deg">M.B.A</span>
+                    <a class="vfx-phone-link" href="tel:+919992306999"><i class="fa-solid fa-phone"></i> 9992306999</a><br>
+                    <a class="vfx-phone-link" href="tel:+919985606999"><i class="fa-solid fa-phone"></i> 9985606999</a>
                 </div>
-                <div class="host-card">
-                    <div class="host-name">T. Vamsi Krishna</div>
-                    <span class="host-degree">B.Tech</span>
-                    <a class="phone-link" href="tel:+919490042906"><i class="fa-solid fa-phone"></i> 9490042905</a>
+                <div class="vfx-host-card">
+                    <div class="vfx-host-name">T. Vamsi Krishna</div>
+                    <span class="vfx-host-deg">B.Tech</span>
+                    <a class="vfx-phone-link" href="tel:+919490042906"><i class="fa-solid fa-phone"></i> 9490042905</a>
                 </div>
             </div>
 
-            <button class="btn-action btn-whatsapp" onclick="openRSVPModal()">
-                <i class="fa-brands fa-whatsapp"></i> Send RSVP via WhatsApp
+            <button class="vfx-whatsapp-btn" onclick="openRSVPModal()">
+                <i class="fa-brands fa-whatsapp"></i> Confirm Presence via WhatsApp
             </button>
         </section>
 
         <!-- FOOTER -->
-        <footer class="site-footer">
-            <div class="footer-quote">Two hearts, two families, one divine beginning.</div>
-            <p>We eagerly look forward to welcoming you! 🙏</p>
+        <footer class="vfx-footer">
+            <div class="footer-script">Two hearts, two families, one divine beginning.</div>
+            <p class="footer-tag">We eagerly look forward to welcoming you! 🙏</p>
 
-            <!-- Visit Counter Badge -->
-            <div class="visit-counter-badge" id="visitCounter">
+            <div class="visit-counter-pill" id="visitCounter">
                 <i class="fa-solid fa-eye"></i> <span id="visitCount">...</span> Guest Visits
             </div>
         </footer>
 
     </div>
 
-    <!-- RSVP Modal Window -->
+    <!-- RSVP Modal -->
     <div id="rsvp-modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeRSVPModal()"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="modal-title">Confirm Your Presence</h3>
-            <div class="form-group">
+        <div class="modal-vfx-content">
+            <button class="close-vfx-modal" onclick="closeRSVPModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="modal-vfx-title">RSVP Confirmation</h3>
+            <div class="form-vfx-group">
                 <label>Your Name</label>
-                <input type="text" id="guestName" class="form-control" placeholder="Enter your full name">
+                <input type="text" id="guestName" class="form-vfx-control" placeholder="Enter full name">
             </div>
-            <div class="form-group">
+            <div class="form-vfx-group">
                 <label>Attending Events</label>
-                <select id="attendingEvent" class="form-control">
+                <select id="attendingEvent" class="form-vfx-control">
                     <option value="Both Reception & Muhurtham">Both Reception & Muhurtham</option>
                     <option value="Reception Only">Reception Only</option>
                     <option value="Muhurtham Only">Muhurtham Only</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-vfx-group">
                 <label>Number of Guests</label>
-                <select id="guestCount" class="form-control">
+                <select id="guestCount" class="form-vfx-control">
                     <option value="1">1 Person</option>
                     <option value="2">2 Persons</option>
                     <option value="3">3 Persons</option>
                     <option value="4+">4+ Persons (Family)</option>
                 </select>
             </div>
-            <button class="btn-action btn-whatsapp" onclick="submitRSVP()">
-                <i class="fa-brands fa-whatsapp"></i> Send Message on WhatsApp
+            <button class="vfx-whatsapp-btn" onclick="submitRSVP()">
+                <i class="fa-brands fa-whatsapp"></i> Send RSVP on WhatsApp
             </button>
         </div>
     </div>
 
-    <!-- BOTTOM STICKY NAVIGATION -->
-    <nav class="bottom-nav">
-        <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="#countdown" class="nav-item"><i class="fa-solid fa-stopwatch"></i>Timer</a>
-        <a href="#gallery" class="nav-item"><i class="fa-solid fa-images"></i>Gallery</a>
-        <a href="#events" class="nav-item"><i class="fa-solid fa-calendar-days"></i>Events</a>
-        <a href="#venue" class="nav-item"><i class="fa-solid fa-location-dot"></i>Venue</a>
-        <a href="#rsvp" class="nav-item"><i class="fa-solid fa-paper-plane"></i>RSVP</a>
+    <!-- BOTTOM FLOATING NAVIGATION -->
+    <nav class="bottom-vfx-nav">
+        <a href="#home" class="nav-vfx-item active"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="#countdown" class="nav-vfx-item"><i class="fa-solid fa-hourglass-half"></i>Timer</a>
+        <a href="#gallery" class="nav-vfx-item"><i class="fa-solid fa-camera"></i>Gallery</a>
+        <a href="#events" class="nav-vfx-item"><i class="fa-solid fa-calendar-check"></i>Events</a>
+        <a href="#venue" class="nav-vfx-item"><i class="fa-solid fa-location-dot"></i>Venue</a>
+        <a href="#rsvp" class="nav-vfx-item"><i class="fa-solid fa-paper-plane"></i>RSVP</a>
     </nav>
 
-    <!-- JavaScript logic -->
+    <!-- Canvas VFX Engine & Application Logic -->
     <script>
-        // Open Envelope Intro Animation & Start Music
-        function openInvitation() {
-            const overlay = document.getElementById('envelope-overlay');
-            overlay.classList.add('opened');
+        // 1. High Performance Gold Particle Canvas VFX Engine
+        const canvas = document.getElementById('vfx-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouseX = 0, mouseY = 0;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2.5 + 0.8;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = -Math.random() * 0.6 - 0.2;
+                this.opacity = Math.random() * 0.7 + 0.2;
+                this.pulse = Math.random() * 0.02 + 0.005;
+                this.hue = Math.random() > 0.3 ? 45 : 350; // Gold or subtle Crimson
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.opacity += Math.sin(Date.now() * 0.003) * 0.005;
+
+                if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+                    this.reset();
+                    this.y = height + 10;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${this.hue}, 85%, 65%, ${Math.max(0.1, this.opacity)})`;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = `hsl(${this.hue}, 85%, 65%)`;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        for (let i = 0; i < 45; i++) {
+            particles.push(new Particle());
+        }
+
+        function renderVFX() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(renderVFX);
+        }
+        renderVFX();
+
+        // Particle Burst Explosive Effect when Unveiling Wax Seal
+        function triggerGoldExplosion(x, y) {
+            for (let i = 0; i < 60; i++) {
+                const p = new Particle();
+                p.x = x;
+                p.y = y;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 8 + 2;
+                p.speedX = Math.cos(angle) * speed;
+                p.speedY = Math.sin(angle) * speed;
+                p.size = Math.random() * 4 + 2;
+                particles.push(p);
+            }
+        }
+
+        // 2. Unveil Cinema Experience
+        function unveilCinemaExperience() {
+            const intro = document.getElementById('cinema-intro');
+            triggerGoldExplosion(window.innerWidth / 2, window.innerHeight / 2);
+            intro.classList.add('opened');
             startAudio();
         }
 
-        // Copy Address Toast Notification
+        // 3. 3D Tilt Card Effect
+        const tiltCard = document.getElementById('tiltCard');
+        if (tiltCard) {
+            window.addEventListener('mousemove', (e) => {
+                const rect = tiltCard.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                tiltCard.style.transform = `rotateY(${x * 0.03}deg) rotateX(${-y * 0.03}deg)`;
+            });
+        }
+
+        // 4. Copy Address Function
         function copyAddress() {
             const address = "V.S.R Convention, Anantapur – Tirupati Highway, Pileru, Andhra Pradesh";
             navigator.clipboard.writeText(address).then(() => {
@@ -1278,26 +1410,7 @@
             });
         }
 
-        // Falling Flower Petals & Jasmine Generator
-        const petalContainer = document.getElementById('petal-container');
-        function createPetal() {
-            const petal = document.createElement('div');
-            const isJasmine = Math.random() > 0.5;
-            petal.className = `petal ${isJasmine ? 'jasmine' : ''}`;
-            
-            const size = isJasmine ? (Math.random() * 8 + 6) : (Math.random() * 12 + 10);
-            petal.style.width = `${size}px`;
-            petal.style.height = `${size}px`;
-            petal.style.left = `${Math.random() * 100}%`;
-            petal.style.animationDuration = `${Math.random() * 5 + 6}s`;
-            petal.style.animationDelay = `0s`;
-            
-            petalContainer.appendChild(petal);
-            setTimeout(() => petal.remove(), 11000);
-        }
-        setInterval(createPetal, 450);
-
-        // Countdown Timer Logic (Wedding Date: 6th Sept 2026 10:15 PM)
+        // 5. Countdown Timer (Sept 6, 2026 10:15 PM)
         const weddingDate = new Date('2026-09-06T22:15:00').getTime();
         function updateCountdown() {
             const now = new Date().getTime();
@@ -1324,7 +1437,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Add to Calendar Generator
+        // 6. Add to Google Calendar
         function addToCalendar() {
             const title = encodeURIComponent("Gowri & Pradeep Wedding");
             const details = encodeURIComponent("Wedding ceremony of B. Gowri and C. Pradeep at V.S.R Convention, Pileru.");
@@ -1333,7 +1446,7 @@
             window.open(googleCalUrl, '_blank');
         }
 
-        // RSVP Modal Functions
+        // 7. RSVP Modal Functions
         function openRSVPModal() {
             document.getElementById('rsvp-modal').classList.add('active');
         }
@@ -1350,7 +1463,7 @@
             closeRSVPModal();
         }
 
-        // Mangalyam Audio Player Engine
+        // 8. Audio Controls
         const bgAudio = document.getElementById('bgAudio');
         let isPlaying = false;
 
@@ -1359,7 +1472,7 @@
             bgAudio.play().then(() => {
                 isPlaying = true;
                 document.getElementById('musicWidget').classList.add('playing');
-                document.getElementById('songBadge').innerText = "🎶 Mangalyam (Sakhi)";
+                document.getElementById('songLabel').innerText = "🎶 Sakhi Mangalyam";
             }).catch(err => {
                 console.log("Autoplay prevented:", err);
             });
@@ -1370,13 +1483,13 @@
                 bgAudio.pause();
                 isPlaying = false;
                 document.getElementById('musicWidget').classList.remove('playing');
-                document.getElementById('songBadge').innerText = "🔇 Paused";
+                document.getElementById('songLabel').innerText = "🔇 Paused";
             } else {
                 startAudio();
             }
         }
 
-        // Live Guest Visit Counter API
+        // 9. Live Guest Visit Tracker
         function trackVisits() {
             const counterApiUrl = 'https://api.counterapi.dev/v1/pradeepgowriinvite/visits/up';
             fetch(counterApiUrl)
@@ -1385,12 +1498,11 @@
                     if (data && data.count) {
                         document.getElementById('visitCount').innerText = data.count.toLocaleString();
                     } else {
-                        throw new Error("Invalid counter response");
+                        throw new Error("Invalid response");
                     }
                 })
                 .catch(err => {
-                    // Fallback to local storage tracking
-                    let count = parseInt(localStorage.getItem('pg_visit_count') || '12');
+                    let count = parseInt(localStorage.getItem('pg_visit_count') || '18');
                     if (!sessionStorage.getItem('pg_session_visited')) {
                         count += 1;
                         localStorage.setItem('pg_visit_count', count);
